@@ -22,10 +22,15 @@
     @endphp
 
     <section class="section">
-        <div class="d-flex flex-wrap align-items-stretch">
-            <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
+            <div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #fff;
+">
                 <div class="p-4 m-3">
-                    <img src="{{ $siteGeneralSettings['logo'] ?? '' }}" alt="logo" width="40%" class="mb-5 mt-2">
+                    {{-- <img src="{{ $siteGeneralSettings['logo'] ?? '' }}" alt="logo" width="40%" class="mb-5 mt-2"> --}}
 
                     <h4 class="text-dark font-weight-normal">{{ trans('auth.welcome') }} <span class="font-weight-bold">{{ $siteGeneralSettings['site_name'] ?? '' }} {{ trans('auth.admin_panel') }}</span></h4>
 
@@ -70,21 +75,9 @@
                             </button>
                         </div>
                     </form>
+
                 </div>
             </div>
-
-    <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="{{ $getPageBackgroundSettings['admin_login'] ?? '' }}">
-          <div class="absolute-bottom-left index-2">
-            <div class="text-light p-5 pb-2">
-              <div class="mb-2 pb-3">
-                <h1 class="mb-2 display-4 font-weight-bold">Rocket LMS</h1>
-                <h5 class="font-weight-normal text-muted-transparent">fully-featured educational platform</h5>
-              </div>
-              Developed by <a class="text-light bb" target="_blank" href="">Rocket soft</a> on <a class="text-light bb" target="_blank" href="https://codecanyon.net/">Envato</a>
-            </div>
-          </div>
-            </div>
-        </div>
     </section>
 </div>
 <!-- General JS Scripts -->

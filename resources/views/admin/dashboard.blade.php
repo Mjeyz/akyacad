@@ -22,7 +22,7 @@
                                     <p class="lead">{{trans('admin/main.welcome_card_text')}}</p>
 
                                     <div class="mt-2 mb-2 d-flex flex-column flex-md-row">
-                                        <a href="/admin/comments/webinars" class="mt-2 mt-md-0 btn btn-outline-white btn-lg btn-icon icon-left ml-0 ml-md-2"><i class="far fa-comment"></i>{{trans('admin/main.comments')}} </a>
+                                        {{-- <a href="/admin/comments/webinars" class="mt-2 mt-md-0 btn btn-outline-white btn-lg btn-icon icon-left ml-0 ml-md-2"><i class="far fa-comment"></i>{{trans('admin/main.comments')}} </a> --}}
                                         <a href="/admin/supports" class="mt-2 mt-md-0 btn btn-outline-white btn-lg btn-icon icon-left ml-0 ml-md-2"><i class="far fa-envelope"></i>{{trans('admin/main.tickets')}}</a>
                                         <a href="/admin/reports/webinars" class="mt-2 mt-md-0 btn btn-outline-white btn-lg btn-icon icon-left ml-0 ml-md-2"><i class="fas fa-info"></i>{{trans('admin/main.reports')}}</a>
                                     </div>
@@ -190,7 +190,7 @@
                 </div>
             @endcan
 
-            @can('admin_general_dashboard_new_comments')
+            {{-- @can('admin_general_dashboard_new_comments')
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <a href="/admin/comments/webinars" class="card card-statistic-1">
                         <div class="card-icon bg-danger">
@@ -205,7 +205,7 @@
                         </div>
                     </a>
                 </div>
-            @endcan
+            @endcan --}}
 
             @can('admin_general_dashboard_new_tickets')
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -246,7 +246,7 @@
 
         <div class="row">
             @can('admin_general_dashboard_sales_statistics_chart')
-                <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+                <div class="col">
                     <div class="card">
                         <div class="card-header">
                             <h4>{{trans('admin/main.sales_statistics')}}</h4>
@@ -335,7 +335,7 @@
                 </div>
             @endcan
 
-            @can('admin_general_dashboard_recent_comments')
+            {{-- @can('admin_general_dashboard_recent_comments')
                 <div class="col-lg-4 col-md-12 col-12 col-sm-12 " @if(count($recentComments) < 6) style="padding-bottom: 30px" @endif>
                     <div class="card @if(count($recentComments) < 6) h-100 @endif">
                         <div class="card-header">
@@ -364,7 +364,7 @@
                         </div>
                     </div>
                 </div>
-            @endcan
+            @endcan --}}
         </div>
 
 
@@ -372,7 +372,7 @@
 
             @can('admin_general_dashboard_recent_tickets')
                 @if(!empty($recentTickets))
-                    <div class="col-md-4">
+                    <div class="col">
                         <div class="card card-hero">
                             <div class="card-header">
                                 <div class="card-icon">
@@ -473,7 +473,7 @@
                 @endif
             @endcan
 
-            @can('admin_general_dashboard_recent_courses')
+            {{-- @can('admin_general_dashboard_recent_courses')
                 @if(!empty($recentCourses))
                     <div class="col-md-4">
                         <div class="card card-hero">
@@ -531,7 +531,7 @@
                         </div>
                     </div>
                 @endif
-            @endcan
+            @endcan --}}
         </div>
 
         @can('admin_general_dashboard_users_statistics_chart')

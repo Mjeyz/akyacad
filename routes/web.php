@@ -43,8 +43,8 @@ Route::group(['namespace' => 'Web', 'middleware' => ['impersonate', 'share']], f
     });
     // set Locale
     Route::post('/locale', 'LocaleController@setLocale');
-
-    Route::get('/', 'HomeController@index');
+    Route::redirect('/', '/admin');
+    // Route::get('/', 'HomeController@index');
 
     Route::group(['prefix' => 'course'], function () {
         Route::get('/{slug}', 'WebinarController@course');

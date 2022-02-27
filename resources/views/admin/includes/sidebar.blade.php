@@ -52,17 +52,17 @@
                     </a>
                     <ul class="dropdown-menu">
                         @can('admin_webinars_list')
-                            <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'course') ? 'active' : '' }}">
+                            {{-- <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'course') ? 'active' : '' }}">
                                 <a class="nav-link @if(!empty($sidebarBeeps['courses']) and $sidebarBeeps['courses']) beep beep-sidebar @endif" href="/admin/webinars?type=course">{{ trans('admin/main.courses') }}</a>
-                            </li>
+                            </li> --}}
 
                             <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'webinar') ? 'active' : '' }}">
                                 <a class="nav-link @if(!empty($sidebarBeeps['webinars']) and $sidebarBeeps['webinars']) beep beep-sidebar @endif" href="/admin/webinars?type=webinar">{{ trans('admin/main.live_classes') }}</a>
                             </li>
 
-                            <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'text_lesson') ? 'active' : '' }}">
+                            {{-- <li class="{{ (request()->is('admin/webinars') and request()->get('type') == 'text_lesson') ? 'active' : '' }}">
                                 <a class="nav-link @if(!empty($sidebarBeeps['textLessons']) and $sidebarBeeps['textLessons']) beep beep-sidebar @endif" href="/admin/webinars?type=text_lesson">{{ trans('admin/main.text_courses') }}</a>
-                            </li>
+                            </li> --}}
                         @endcan()
 
                         @can('admin_webinars_create')
@@ -101,7 +101,7 @@
                 </li>
             @endcan()
 
-            @can('admin_filters')
+            {{-- @can('admin_filters')
                 <li class="nav-item dropdown {{ (request()->is('admin/filters*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                         <i class="fas fa-filter"></i>
@@ -120,18 +120,18 @@
                         @endcan()
                     </ul>
                 </li>
-            @endcan()
+            @endcan() --}}
 
-            @can('admin_quizzes')
+            {{-- @can('admin_quizzes')
                 <li class="{{ (request()->is('admin/quizzes*')) ? 'active' : '' }}">
                     <a class="nav-link " href="/admin/quizzes">
                         <i class="fa fa-file"></i>
                         <span>{{ trans('admin/main.quizzes') }}</span>
                     </a>
                 </li>
-            @endcan()
+            @endcan() --}}
 
-            @can('admin_certificate')
+            {{-- @can('admin_certificate')
                 <li class="nav-item dropdown {{ (request()->is('admin/certificates*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                         <i class="fas fa-newspaper"></i>
@@ -159,16 +159,16 @@
                         @endcan
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
 
-            @can('admin_reviews_lists')
+            {{-- @can('admin_reviews_lists')
                 <li class="{{ (request()->is('admin/reviews')) ? 'active' : '' }}">
                     <a href="/admin/reviews" class="nav-link @if(!empty($sidebarBeeps['reviews']) and $sidebarBeeps['reviews']) beep beep-sidebar @endif">
                         <i class="fas fa-star"></i>
                         <span>Reviews</span>
                     </a>
                 </li>
-            @endcan
+            @endcan --}}
 
             @if($authUser->can('admin_consultants_lists') or
                 $authUser->can('admin_appointments_lists')
@@ -229,11 +229,11 @@
                             </li>
                         @endcan()
 
-                        @can('admin_organizations_list')
+                        {{-- @can('admin_organizations_list')
                             <li class="{{ (request()->is('admin/organizations')) ? 'active' : '' }}">
                                 <a class="nav-link" href="/admin/organizations">{{ trans('admin/main.organizations') }}</a>
                             </li>
-                        @endcan()
+                        @endcan() --}}
 
                         @can('admin_users_create')
                             <li class="{{ (request()->is('admin/users/create')) ? 'active' : '' }}">
@@ -285,11 +285,11 @@
                 </li>
             @endcan
 
-            @can('admin_users_badges')
+            {{-- @can('admin_users_badges')
                 <li class="{{ (request()->is('admin/users/badges')) ? 'active' : '' }}">
                     <a class="nav-link" href="/admin/users/badges"><i class="fas fa-trophy"></i> {{ trans('admin/main.badges') }}</a>
                 </li>
-            @endcan()
+            @endcan() --}}
 
             @can('admin_become_instructors_list')
                 <li class="{{ (request()->is('admin/users/become_instructors')) ? 'active' : '' }}">
@@ -345,7 +345,7 @@
                 @endcan
             @endcan
 
-            @can('admin_comments')
+            {{-- @can('admin_comments')
                 <li class="nav-item dropdown {{ (request()->is('admin/comments*') and !request()->is('admin/comments/webinars/reports')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-comments"></i> <span>{{ trans('admin/main.comments') }}</span></a>
                     <ul class="dropdown-menu">
@@ -362,7 +362,7 @@
                         @endcan
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
 
             @can('admin_reports')
                 <li class="nav-item dropdown {{ (request()->is('admin/reports*') or request()->is('admin/comments/webinars/reports') or request()->is('admin/comments/blog/reports')) ? 'active' : '' }}">
@@ -381,11 +381,11 @@
                             </li>
                         @endcan
 
-                        @can('admin_blog_comments_reports')
+                        {{-- @can('admin_blog_comments_reports')
                             <li class="{{ (request()->is('admin/comments/blog/reports')) ? 'active' : '' }}">
                                 <a class="nav-link" href="/admin/comments/blog/reports">{{ trans('admin/main.blog_comments_reports') }}</a>
                             </li>
-                        @endcan
+                        @endcan --}}
 
                         @can('admin_report_reasons')
                             <li class="{{ (request()->is('admin/reports/reasons')) ? 'active' : '' }}">
@@ -405,7 +405,7 @@
                 </li>
             @endcan
 
-            @can('admin_noticeboards')
+            {{-- @can('admin_noticeboards')
                 <li class="nav-item dropdown {{ (request()->is('admin/noticeboards*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-sticky-note"></i> <span>{{ trans('admin/main.noticeboard') }}</span></a>
                     <ul class="dropdown-menu">
@@ -422,7 +422,8 @@
                         @endcan
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
+            
 
             @can('admin_notifications')
                 <li class="nav-item dropdown {{ (request()->is('admin/notifications*')) ? 'active' : '' }}">
@@ -468,7 +469,7 @@
                 <li class="menu-header">{{ trans('admin/main.content') }}</li>
             @endif
 
-            @can('admin_blog')
+            {{-- @can('admin_blog')
                 <li class="nav-item dropdown {{ (request()->is('admin/blog*') and !request()->is('admin/blog/comments')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                         <i class="fas fa-rss-square"></i>
@@ -494,9 +495,9 @@
                         @endcan
                     </ul>
                 </li>
-            @endcan()
+            @endcan() --}}
 
-            @can('admin_pages')
+            {{-- @can('admin_pages')
                 <li class="nav-item dropdown {{ (request()->is('admin/pages*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                         <i class="fas fa-pager"></i>
@@ -517,9 +518,9 @@
                         @endcan()
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
 
-            @can('admin_additional_pages')
+            {{-- @can('admin_additional_pages')
                 <li class="nav-item dropdown {{ (request()->is('admin/additional_page*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-plus-circle"></i> <span>{{ trans('admin/main.additional_pages_title') }}</span></a>
                     <ul class="dropdown-menu">
@@ -549,7 +550,7 @@
                         @endcan()
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
 
             @can('admin_testimonials')
                 <li class="nav-item dropdown {{ (request()->is('admin/testimonials*')) ? 'active' : '' }}">
@@ -677,7 +678,7 @@
                 </li>
             @endcan
 
-            @can('admin_subscribe')
+            {{-- @can('admin_subscribe')
                 <li class="nav-item dropdown {{ (request()->is('admin/financial/subscribes*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                         <i class="fas fa-cart-plus"></i>
@@ -697,7 +698,7 @@
                         @endcan
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
 
             @if($authUser->can('admin_discount_codes') or
                 $authUser->can('admin_product_discount') or
@@ -753,7 +754,7 @@
                 </li>
             @endcan
 
-            @can('admin_feature_webinars')
+            {{-- @can('admin_feature_webinars')
                 <li class="nav-item dropdown {{ (request()->is('admin/webinars/features*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                         <i class="fas fa-star"></i>
@@ -773,9 +774,9 @@
                         @endcan
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
 
-            @can('admin_promotion')
+            {{-- @can('admin_promotion')
                 <li class="nav-item dropdown {{ (request()->is('admin/financial/promotions*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                         <i class="fas fa-rocket"></i>
@@ -800,9 +801,9 @@
                         @endcan
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
 
-            @can('admin_advertising')
+            {{-- @can('admin_advertising')
                 <li class="nav-item dropdown {{ (request()->is('admin/advertising*')) ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                         <i class="fas fa-file-image"></i>
@@ -822,7 +823,7 @@
                         @endcan
                     </ul>
                 </li>
-            @endcan
+            @endcan --}}
 
             @can('admin_newsletters_lists')
                 <li class="nav-item {{ (request()->is('admin/newsletters*')) ? 'active' : '' }}">
